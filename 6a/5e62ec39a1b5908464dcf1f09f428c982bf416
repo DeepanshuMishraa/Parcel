@@ -1,0 +1,19 @@
+repository/user_repository.go
+  s_0d218bd8309da4::t_7af4a6258c294e 18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "6a5e62ec39a1b5908464dcf1f09f428c982bf416",
+  "prompts": {},
+  "sessions": {
+    "s_0d218bd8309da4": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_12582ddb6ffexmiPySj6IPnB9N",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
