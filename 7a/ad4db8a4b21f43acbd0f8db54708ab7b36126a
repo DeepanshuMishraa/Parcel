@@ -1,0 +1,19 @@
+utils/redis-client.go
+  s_511b0371115af9::t_a2426ae1f910e0 7-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "7aad4db8a4b21f43acbd0f8db54708ab7b36126a",
+  "prompts": {},
+  "sessions": {
+    "s_511b0371115af9": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_125626070ffevmB7nbRoOx3sqe",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
