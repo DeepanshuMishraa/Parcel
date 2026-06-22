@@ -37,6 +37,8 @@ func main() {
 		Redis: redis,
 	}
 
+	go RunWorker(dbx, redis, jobService)
+
 	router.POST("/api/user/register", handlers.RegisterRequestHandler(dbx))
 	router.POST("/api/user/login", handlers.LoginRequestHandler(dbx, cfg))
 	router.POST("/api/jobs/create", handlers.CreateJobHandler(jobService))
