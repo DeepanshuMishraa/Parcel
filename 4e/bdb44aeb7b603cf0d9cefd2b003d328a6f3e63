@@ -1,0 +1,19 @@
+cmd/api/worker.go
+  s_e968ee8ee8ecd1::t_abcfd22c06e2d2 27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "4ebdb44aeb7b603cf0d9cefd2b003d328a6f3e63",
+  "prompts": {},
+  "sessions": {
+    "s_e968ee8ee8ecd1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_110b8d8e2ffe8IuK33BRlwYcUw",
+        "model": "glm-5.2"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
