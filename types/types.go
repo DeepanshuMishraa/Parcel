@@ -23,6 +23,7 @@ type LoginResponse struct {
 type CreateJobRequest struct {
 	JobName string         `json:"job_name" binding:"required"`
 	Status  string         `json:"status"`
+	UserId  string         `json:"user_id" binding:"required"`
 	Payload map[string]any `json:"payload" binding:"required"`
 }
 

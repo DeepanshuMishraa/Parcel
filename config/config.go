@@ -12,6 +12,7 @@ type Config struct {
 	PORT         string
 	DATABASE_URL string
 	REDIS_URL    string
+	JWT_SECRET   string
 }
 
 func Load() (*Config, error) {
@@ -24,6 +25,7 @@ func Load() (*Config, error) {
 	DATABASE_URL := os.Getenv("DATABASE_URL")
 	PORT := os.Getenv("PORT")
 	REDIS_URL := os.Getenv("REDIS_URL")
+	JWT_SECRET := os.Getenv("JWT_SECRET")
 
 	if DATABASE_URL == "" || PORT == "" || REDIS_URL == "" {
 		return &Config{}, errors.New("env vars cannot be empty")
@@ -35,5 +37,6 @@ func Load() (*Config, error) {
 		DATABASE_URL: DATABASE_URL,
 		PORT:         PORT,
 		REDIS_URL:    REDIS_URL,
+		JWT_SECRET:   JWT_SECRET,
 	}, nil
 }

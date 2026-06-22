@@ -3,12 +3,15 @@ package handlers
 import (
 	"database/sql"
 	"net/http"
+	"time"
 
+	"github.com/DeepanshuMishraa/mini-job-queue/config"
 	"github.com/DeepanshuMishraa/mini-job-queue/models"
 	"github.com/DeepanshuMishraa/mini-job-queue/repository"
 	"github.com/DeepanshuMishraa/mini-job-queue/types"
 	"github.com/DeepanshuMishraa/mini-job-queue/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/golang-jwt/jwt/v5"
 )
 
 func RegisterRequestHandler(db *sql.DB) gin.HandlerFunc {
@@ -58,7 +61,7 @@ func RegisterRequestHandler(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
-func LoginRequestHandler(db *sql.DB) gin.HandlerFunc {
+func LoginRequestHandler(db *sql.DB, cfg *config.Config) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var req types.LoginRequest
 
@@ -87,7 +90,22 @@ func LoginRequestHandler(db *sql.DB) gin.HandlerFunc {
 			return
 		}
 
+		claims := jwt.MapClaims{
+			"user_id": user.Id,
+			"email":   user.Email,
+			"exp":     time.Now().Add(24 * time.Hour).Unix(),
+		}
+
+		token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+
+		tokenString, err := token.SignedString([]byte(cfg.JWT_SECRET))
+
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
 		c.JSON(http.StatusOK, gin.H{
+			"token":   tokenString,
 			"message": "Login SuccessFull",
 		})
 	}

@@ -19,6 +19,7 @@ type User struct {
 type Job struct {
 	JobID     string         `json:"jobId"`
 	JobName   string         `json:"job_name"`
+	UserId    string         `json:"user_id"`
 	JobStatus Status         `json:"status"`
 	Payload   map[string]any `json:"payload"`
 }
