@@ -9,6 +9,7 @@ import (
 	"github.com/DeepanshuMishraa/mini-job-queue/middleware"
 	"github.com/DeepanshuMishraa/mini-job-queue/services"
 	"github.com/DeepanshuMishraa/mini-job-queue/utils"
+	"github.com/DeepanshuMishraa/mini-job-queue/worker"
 	"github.com/gin-gonic/gin"
 )
 
@@ -38,7 +39,7 @@ func main() {
 		Redis: redis,
 	}
 
-	go RunWorker(dbx, redis, jobService)
+	go worker.RunWorker(dbx, redis, jobService)
 
 	protectedRouter := router.Group("/api")
 	protectedRouter.Use(middleware.AuthMiddleware(cfg))
