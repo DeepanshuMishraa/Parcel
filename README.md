@@ -52,6 +52,4 @@ cp .env.example .env
 go run cmd/api/main.go
 ```
 
-## Arch Diagram
 
-![Arch Diagram](./arch.png)

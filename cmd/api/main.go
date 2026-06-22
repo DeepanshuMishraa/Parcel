@@ -6,6 +6,7 @@ import (
 	"github.com/DeepanshuMishraa/mini-job-queue/config"
 	"github.com/DeepanshuMishraa/mini-job-queue/db"
 	"github.com/DeepanshuMishraa/mini-job-queue/handlers"
+	"github.com/DeepanshuMishraa/mini-job-queue/middleware"
 	"github.com/DeepanshuMishraa/mini-job-queue/services"
 	"github.com/DeepanshuMishraa/mini-job-queue/utils"
 	"github.com/gin-gonic/gin"
@@ -39,11 +40,14 @@ func main() {
 
 	go RunWorker(dbx, redis, jobService)
 
+	protectedRouter := router.Group("/api")
+	protectedRouter.Use(middleware.AuthMiddleware(cfg))
+
 	router.POST("/api/user/register", handlers.RegisterRequestHandler(dbx))
 	router.POST("/api/user/login", handlers.LoginRequestHandler(dbx, cfg))
-	router.POST("/api/jobs/create", handlers.CreateJobHandler(jobService))
-	router.GET("/api/job/:id", handlers.GetJobByIdHandler(dbx))
-	router.GET("/api/jobs/:id", handlers.GetAllJobHandler(dbx))
+	protectedRouter.POST("/jobs/create", handlers.CreateJobHandler(jobService))
+	protectedRouter.GET("/job/:id", handlers.GetJobByIdHandler(dbx))
+	protectedRouter.GET("/jobs/:id", handlers.GetAllJobHandler(dbx))
 
 	router.GET("/api/health", gin.HandlerFunc(func(c *gin.Context) {
 		c.JSON(201, gin.H{
