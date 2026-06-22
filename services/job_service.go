@@ -3,6 +3,8 @@ package services
 import (
 	"context"
 	"database/sql"
+	"math/rand"
+	"time"
 
 	"github.com/DeepanshuMishraa/mini-job-queue/models"
 	"github.com/DeepanshuMishraa/mini-job-queue/repository"
@@ -33,4 +35,49 @@ func (s *JobService) CreateJobService(job models.Job) (*models.Job, error) {
 
 	return createdJob, nil
 
+}
+
+func (s *JobService) ProcessJob(
+	db *sql.DB,
+	jobID string,
+) (*models.Job, error) {
+
+	job, err := repository.GetJobById(
+		db,
+		jobID,
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	err = repository.UpdateJobByID(
+		db,
+		job.JobID,
+		models.RUNNING,
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	processingTime :=
+		time.Duration(rand.Intn(61)) *
+			time.Second
+
+	time.Sleep(processingTime)
+
+	err = repository.UpdateJobByID(
+		db,
+		job.JobID,
+		models.FINISHED,
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	job.JobStatus = models.FINISHED
+
+	return job, nil
 }

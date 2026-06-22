@@ -61,3 +61,13 @@ func GetJobById(db *sql.DB, id string) (*models.Job, error) {
 
 	return jobs, nil
 }
+
+func UpdateJobByID(db *sql.DB, id string, status models.Status) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	query := `UPDATE jobs SET status=$1 WHERE job_id=$2`
+
+	_, err := db.ExecContext(ctx, query, status, id)
+	return err
+}
