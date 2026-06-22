@@ -1,0 +1,19 @@
+repository/job_repository.go
+  s_e968ee8ee8ecd1::t_e04d599164b0a3 65-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "ebe10bb3a71d7740bff23f195ad35570972dad85",
+  "prompts": {},
+  "sessions": {
+    "s_e968ee8ee8ecd1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_110b8d8e2ffe8IuK33BRlwYcUw",
+        "model": "glm-5.2"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
