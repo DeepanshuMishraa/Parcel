@@ -45,6 +45,36 @@ func CreateJobHandler(jobService *services.JobService) gin.HandlerFunc {
 	}
 }
 
+func GetJobHandler(db *sql.DB) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		user_id := c.Param("id")
+		job, err := repository.GetJobById(db, user_id)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
+
+		c.JSON(http.StatusOK, job)
+	}
+}
+
+func GetAllJobHandler(db *sql.DB) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		userID := c.Param("id")
+		jobs, err := repository.GetAllJobs(db, userID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
+
+		c.JSON(http.StatusOK, jobs)
+	}
+}
+
 func GetJobByIdHandler(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		id := c.Param("id")

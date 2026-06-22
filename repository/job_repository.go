@@ -35,6 +35,40 @@ func CreateJob(db *sql.DB, job models.Job) (*models.Job, error) {
 	return createdJob, nil
 }
 
+func GetAllJobs(db *sql.DB, user_id string) ([]models.Job, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	query := `SELECT job_id, job_name, status, user_id, payload FROM jobs WHERE user_id=$1`
+
+	rows, err := db.QueryContext(ctx, query, user_id)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var jobs []models.Job
+	for rows.Next() {
+		var job models.Job
+		var payloadByte []byte
+		if err := rows.Scan(
+			&job.JobID,
+			&job.JobName,
+			&job.JobStatus,
+			&job.UserId,
+			&payloadByte,
+		); err != nil {
+			return nil, err
+		}
+		if err := json.Unmarshal(payloadByte, &job.Payload); err != nil {
+			return nil, err
+		}
+		jobs = append(jobs, job)
+	}
+
+	return jobs, rows.Err()
+}
+
 func GetJobById(db *sql.DB, id string) (*models.Job, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()

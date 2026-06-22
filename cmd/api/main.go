@@ -42,7 +42,8 @@ func main() {
 	router.POST("/api/user/register", handlers.RegisterRequestHandler(dbx))
 	router.POST("/api/user/login", handlers.LoginRequestHandler(dbx, cfg))
 	router.POST("/api/jobs/create", handlers.CreateJobHandler(jobService))
-	router.GET("/api/jobs/:id", handlers.GetJobByIdHandler(dbx))
+	router.GET("/api/job/:id", handlers.GetJobByIdHandler(dbx))
+	router.GET("/api/jobs/:id", handlers.GetAllJobHandler(dbx))
 
 	router.GET("/api/health", gin.HandlerFunc(func(c *gin.Context) {
 		c.JSON(201, gin.H{
