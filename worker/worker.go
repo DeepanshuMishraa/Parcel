@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/DeepanshuMishraa/mini-job-queue/config"
-	"github.com/DeepanshuMishraa/mini-job-queue/services"
+	"github.com/DeepanshuMishraa/Parcel/config"
+	"github.com/DeepanshuMishraa/Parcel/services"
 	"github.com/redis/go-redis/v9"
 )
 

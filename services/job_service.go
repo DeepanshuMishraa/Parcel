@@ -6,11 +6,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/DeepanshuMishraa/mini-job-queue/config"
-	"github.com/DeepanshuMishraa/mini-job-queue/models"
-	"github.com/DeepanshuMishraa/mini-job-queue/repository"
-	"github.com/DeepanshuMishraa/mini-job-queue/tools"
-	"github.com/DeepanshuMishraa/mini-job-queue/types"
+	"github.com/DeepanshuMishraa/Parcel/config"
+	"github.com/DeepanshuMishraa/Parcel/models"
+	"github.com/DeepanshuMishraa/Parcel/repository"
+	"github.com/DeepanshuMishraa/Parcel/tools"
+	"github.com/DeepanshuMishraa/Parcel/types"
 	"github.com/redis/go-redis/v9"
 )
 

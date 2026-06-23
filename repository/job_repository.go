@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/DeepanshuMishraa/mini-job-queue/models"
+	"github.com/DeepanshuMishraa/Parcel/models"
 )
 
 func CreateJob(db *sql.DB, job models.Job, userId string) (*models.Job, error) {

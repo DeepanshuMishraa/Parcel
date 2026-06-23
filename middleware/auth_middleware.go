@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/DeepanshuMishraa/mini-job-queue/config"
+	"github.com/DeepanshuMishraa/Parcel/config"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"net/http"

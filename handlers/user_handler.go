@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/DeepanshuMishraa/mini-job-queue/config"
-	"github.com/DeepanshuMishraa/mini-job-queue/models"
-	"github.com/DeepanshuMishraa/mini-job-queue/repository"
-	"github.com/DeepanshuMishraa/mini-job-queue/types"
-	"github.com/DeepanshuMishraa/mini-job-queue/utils"
+	"github.com/DeepanshuMishraa/Parcel/config"
+	"github.com/DeepanshuMishraa/Parcel/models"
+	"github.com/DeepanshuMishraa/Parcel/repository"
+	"github.com/DeepanshuMishraa/Parcel/types"
+	"github.com/DeepanshuMishraa/Parcel/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 )

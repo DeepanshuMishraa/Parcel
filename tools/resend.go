@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/DeepanshuMishraa/mini-job-queue/config"
+	"github.com/DeepanshuMishraa/Parcel/config"
 	"github.com/resend/resend-go/v3"
 )
 

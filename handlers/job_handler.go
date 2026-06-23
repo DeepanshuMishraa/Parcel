@@ -4,10 +4,10 @@ import (
 	"database/sql"
 	"net/http"
 
-	"github.com/DeepanshuMishraa/mini-job-queue/models"
-	"github.com/DeepanshuMishraa/mini-job-queue/repository"
-	"github.com/DeepanshuMishraa/mini-job-queue/services"
-	"github.com/DeepanshuMishraa/mini-job-queue/types"
+	"github.com/DeepanshuMishraa/Parcel/models"
+	"github.com/DeepanshuMishraa/Parcel/repository"
+	"github.com/DeepanshuMishraa/Parcel/services"
+	"github.com/DeepanshuMishraa/Parcel/types"
 	"github.com/gin-gonic/gin"
 )
 

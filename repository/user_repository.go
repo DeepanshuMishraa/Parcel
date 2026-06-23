@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"database/sql"
-	"github.com/DeepanshuMishraa/mini-job-queue/models"
+	"github.com/DeepanshuMishraa/Parcel/models"
 	"time"
 )
 

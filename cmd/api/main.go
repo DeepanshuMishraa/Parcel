@@ -3,13 +3,13 @@ package main
 import (
 	"log"
 
-	"github.com/DeepanshuMishraa/mini-job-queue/config"
-	"github.com/DeepanshuMishraa/mini-job-queue/db"
-	"github.com/DeepanshuMishraa/mini-job-queue/handlers"
-	"github.com/DeepanshuMishraa/mini-job-queue/middleware"
-	"github.com/DeepanshuMishraa/mini-job-queue/services"
-	"github.com/DeepanshuMishraa/mini-job-queue/utils"
-	"github.com/DeepanshuMishraa/mini-job-queue/worker"
+	"github.com/DeepanshuMishraa/Parcel/config"
+	"github.com/DeepanshuMishraa/Parcel/db"
+	"github.com/DeepanshuMishraa/Parcel/handlers"
+	"github.com/DeepanshuMishraa/Parcel/middleware"
+	"github.com/DeepanshuMishraa/Parcel/services"
+	"github.com/DeepanshuMishraa/Parcel/utils"
+	"github.com/DeepanshuMishraa/Parcel/worker"
 	"github.com/gin-gonic/gin"
 )
 
