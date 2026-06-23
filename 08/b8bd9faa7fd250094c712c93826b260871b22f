@@ -1,0 +1,35 @@
+handlers/job_handler.go
+  s_915cdfd20ea37a::t_c3f6d27b27184a 7-10
+repository/job_repository.go
+  s_915cdfd20ea37a::t_b21dc7e9dc733d 9
+go.mod
+  s_915cdfd20ea37a::t_a414ff9d495253 1
+handlers/user_handler.go
+  s_915cdfd20ea37a::t_c3f6d27b27184a 8-12
+repository/user_repository.go
+  s_915cdfd20ea37a::t_b21dc7e9dc733d 6
+tools/resend.go
+  s_915cdfd20ea37a::t_b21dc7e9dc733d 8
+middleware/auth_middleware.go
+  s_915cdfd20ea37a::t_b21dc7e9dc733d 5
+worker/worker.go
+  s_915cdfd20ea37a::t_c3f6d27b27184a 7-8
+services/job_service.go
+  s_915cdfd20ea37a::t_c3f6d27b27184a 9-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "08b8bd9faa7fd250094c712c93826b260871b22f",
+  "prompts": {},
+  "sessions": {
+    "s_915cdfd20ea37a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_10b4e33a2ffeb26nZ1LKcEqHgH",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Deepanshu Mishra <d4deepanshu723@gmail.com>"
+    }
+  }
+}
