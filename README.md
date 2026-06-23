@@ -1,4 +1,4 @@
-# Mini Job Queue
+# Parcel
 
 Lightweight HTTP job queue built with Go. Users submit jobs with arbitrary JSON payloads, and a background worker picks them up, processes them, and tracks status through the lifecycle.
 
@@ -112,6 +112,7 @@ cp .env.example .env
 # fill in DATABASE_URL, REDIS_URL, JWT_SECRET, PORT
 
 # run migrations (use your migration tool of choice)
+./Scripts/migrate.sh up 
 # then start the server
 go run cmd/api/main.go
 ```
